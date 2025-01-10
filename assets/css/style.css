@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+html
+{
+    font-family: 'Poppins', sans-serif;
+}
+body 
+{
+    background-color: #d1d1d1;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#input-field 
+{
+    display: block;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    resize: none;
+
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+.gene-btn 
+{
+    margin-top: 10px;
+    display: block;
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 0.5em;
+    float: right;
+}
+.gene-btn:hover 
+{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar 
+{
+    width: 12px;
+}
+::-webkit-scrollbar-track
+{
+    background-color: #fff;
+    border-radius: 100vw;
+    margin-top: 10px;
+}
+::-webkit-scrollbar-thumb 
+{
+    border-radius: 100vw;
+    background-color: #ccc;
+    transition: 0.5s;
+    border: 2px solid #fff;
+    transition: 2s;
+}
+::-webkit-scrollbar-thumb:hover 
+{
+    background-color: #888;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.test 
+{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow-x: scroll;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    display: none;
+}
+.show 
+{
+    display: block;
+}
+
+.test-header
+{
+    overflow: hidden;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+.test-header .test-heading
+{
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+    color: blue;
+    user-select: none;
+}
+.test-header i 
+{
+    font-size: 20px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.test-header i:hover 
+{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+
+.test-body 
+{
+    margin-top: 55px;
+    display: flex;
+}
+.test-content 
+{
+    max-height: calc(100vh - 55px);
+    width: 70%;
+    overflow-y: scroll;
+    /* margin-top: 55px; */
+    padding: 0 20px;
+}
+.option-list input
+{
+    display: none;
+}
+.op
+{
+    padding: 10px 20px;
+    display: block;
+    border: 2px solid #ccc;
+    margin-top: 20px;
+    border-radius: 0.5em;
+
+    font-size: 18px;
+}
+.op:hover 
+{
+    cursor: pointer;
+    background-color: #eee;
+}
+input:checked + .op 
+{
+    border: 2px solid blue;
+    background-color: blue;
+    color: #fff
+}
+.question
+{
+    width: 700px;
+    max-width: 100%;
+    border-radius: 0.5em;
+    margin: 20px 20px 40px 20px;
+}
+.question-num
+{
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: orange;
+    display: inline-block;
+    margin-right: 10px;
+}
+.question-text 
+{
+    font-size: 20px;
+}
+
+.submit-btn 
+{
+    margin-top: 10px;
+    display: block;
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 0.5em;
+}
+.submit-btn:hover 
+{
+    cursor: pointer;
+    background-color: rgb(0, 0, 180);
+}
+
+.test-sidebar 
+{
+    height: calc(100vh - 55px);
+    width: 30%;
+    padding: 20px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #ddd;
+}
