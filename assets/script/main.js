@@ -109,14 +109,14 @@ function generateQ(content) {
 
 const submitBtn = document.querySelector('.submit-btn')
 
-var data;
+var keys;
 function createTest() {
     if (input.value != "") {
         test.classList.add('show')
         
         var questionList = divide(input.value)
 
-        var keys = []
+        keys = []
         
         for (let i = 0; i < questionList.length; i++) {
             var question = questionList[i]
@@ -125,13 +125,6 @@ function createTest() {
 
             keys.push(`q${i + 1}-${partsQ[6]}`)
         }
-
-        var userAns = []
-        var userOptions = document.querySelectorAll('input[name="option"]:checked')
-        userOptions.forEach(userOption => {
-            userAns.push(userOption.value)
-        })
-
 
         quitBtn.addEventListener('click', function() {
             test.classList.remove('show')
@@ -142,10 +135,6 @@ function createTest() {
             }
         })
 
-        data = []
-        data.push(keys)
-        data.push(userAns)
-
     }
     else {
         alert('Please enter you text!')
@@ -154,5 +143,21 @@ function createTest() {
 }
 
 function checkAns() {
-    
+    var userAns = []
+    var userOptions = document.querySelectorAll('input[name="option"]:checked')
+    userOptions.forEach(userOption => {
+        userAns.push(userOption.value)        
+    })
+
+    var questionNums = document.querySelectorAll('.question').length
+
+
+    var point = 0
+    for (let i = 0; i < questionNums; i++) {
+        if (userAns[i] == keys[i]) {
+            point += 1
+        }
+    }
+    alert(`${point}/${questionNums}`)
 }
+
