@@ -2,6 +2,7 @@ const input = document.getElementById('input-field')
 const test = document.querySelector('.test')
 const quitBtn = document.querySelector('.js-quit-btn')
 const testContent = document.querySelector('.test-content')
+const questList = document.querySelector('.question-list')
 
 function getContent(x) {
     for (let i = 0; i < x.length; i++) {
@@ -105,6 +106,7 @@ function generateQ(content) {
         optionQ.innerHTML = content[j + 1]
         optionList.appendChild(optionQ)
     }
+
 }
 
 const submitBtn = document.querySelector('.submit-btn')
@@ -124,15 +126,37 @@ function createTest() {
             generateQ(partsQ)
 
             keys.push(`q${i + 1}-${partsQ[6]}`)
+
+            const questSquare = document.createElement('div')
+            questSquare.classList.add('quest-square')
+            questSquare.classList.add(`q${i + 1}-square`)
+            questSquare.innerHTML = `${i + 1}`
+            questList.appendChild(questSquare)
+        }
+
+        for (let i = 0; i < questionList.length; i++) {
+            const options = document.querySelectorAll(`.q${i + 1} input[name="option"]`)
+            options.forEach(option => {
+                option.addEventListener('change', () => {
+                    const square = document.querySelector(`.q${i + 1}-square`)
+                    square.classList.add('hover')
+                })
+            })
         }
 
         quitBtn.addEventListener('click', function() {
             test.classList.remove('show')
             input.value = ""
             const questions = document.querySelectorAll('.question')
-            for (const question of questions) {
+            questions.forEach(question => {
                 question.remove()
-            }
+            })
+
+            const squares = document.querySelectorAll('.quest-square')
+            squares.forEach(square => {
+                square.classList.remove('hover')
+                square.remove()
+            })
         })
 
     }
@@ -150,7 +174,6 @@ function checkAns() {
     })
 
     var questionNums = document.querySelectorAll('.question').length
-
 
     var point = 0
     for (let i = 0; i < questionNums; i++) {
