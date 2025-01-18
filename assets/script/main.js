@@ -1,8 +1,9 @@
 const input = document.getElementById('input-field')
 const test = document.querySelector('.test')
-const quitBtn = document.querySelector('.js-quit-btn')
+const quitBtns = document.querySelectorAll('.js-quit-btn')
 const testContent = document.querySelector('.test-content')
 const questList = document.querySelector('.question-list')
+const modalTest = document.querySelector('.js-modal-test')
 
 function getContent(x) {
     for (let i = 0; i < x.length; i++) {
@@ -144,7 +145,7 @@ function createTest() {
             })
         }
 
-        quitBtn.addEventListener('click', function() {
+        quitBtns.forEach(quitBtn => quitBtn.addEventListener('click', function() {
             test.classList.remove('show')
             input.value = ""
             const questions = document.querySelectorAll('.question')
@@ -157,7 +158,9 @@ function createTest() {
                 square.classList.remove('hover')
                 square.remove()
             })
-        })
+
+            modalTest.classList.remove('show')
+        }))
 
     }
     else {
@@ -181,6 +184,9 @@ function checkAns() {
             point += 1
         }
     }
-    alert(`${point}/${questionNums}`)
+
+    modalTest.classList.add('show')
+    document.querySelector('.modal-test .modal-content p').innerHTML = `${point}/${questionNums}`
+
 }
 

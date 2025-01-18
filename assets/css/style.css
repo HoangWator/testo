@@ -248,3 +248,52 @@ input:checked + .op
     padding: 10px 0;
     text-align: center;
 }
+
+.modal-test 
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+.modal-test.show 
+{
+    display: flex;
+}
+.modal-test .modal-container 
+{   
+    border-radius: 0.5em;
+    padding: 20px;
+    background-color: #fff;
+}
+.modal-test .modal-content p
+{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.modal-test button 
+{
+    float: right;
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    background-color: blue;
+    color: #fff;
+}
+.modal-test button:hover 
+{
+    cursor: pointer;
+}
